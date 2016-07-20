@@ -218,7 +218,7 @@ IfcCharacterDecoder::operator std::string() {
 			(current_char == '\'' && parse_state == APOSTROPHE)
 			) ) {
 				if ( parse_state == APOSTROPHE && current_char != '\'' ) break;
-				throw IfcInvalidTokenException(file->Tell(), current_char);
+				throw IfcException("Invalid character encountered");
 		} else {
 			parse_state = hex = hex_count = 0;
 			// NOTE: this is in fact wrong, this ought to be the representation of the character.
@@ -286,7 +286,7 @@ void IfcCharacterDecoder::dryRun() {
 			(current_char == '\'' && parse_state == APOSTROPHE)
 			) ) {
 				if ( parse_state == APOSTROPHE && current_char != '\'' ) break;
-				throw IfcInvalidTokenException(file->Tell(), current_char);
+				throw IfcException("Invalid character encountered");
 		} else {
 			parse_state = hex_count = 0;
 		}
@@ -302,7 +302,7 @@ UErrorCode IfcCharacterDecoder::status = U_ZERO_ERROR;
 #endif
 
 #ifdef HAVE_ICU
-IfcCharacterDecoder::ConversionMode IfcCharacterDecoder::mode = IfcCharacterDecoder::UTF8;
+IfcCharacterDecoder::ConversionMode IfcCharacterDecoder::mode = IfcCharacterDecoder::JSON;
 
 // Many BIM software (eg. Revit, ArchiCAD, ...) has wrong behavior  
 bool IfcCharacterDecoder::compatibility_mode = false;
