@@ -109,6 +109,7 @@ namespace IfcGeom {
 			std::vector<int> _material_ids;
 			std::vector<Material> _materials;
 			VertexKeyMap welds;
+			std::vector<long> _shape_counter_ids;
 
 		public:
 			int id() const { return _id; }
@@ -119,11 +120,14 @@ namespace IfcGeom {
             const std::vector<P>& uvs() const { return uvs_; }
 			const std::vector<int>& material_ids() const { return _material_ids; }
 			const std::vector<Material>& materials() const { return _materials; }
+			const std::vector<long>& shape_counter_ids() const { return _shape_counter_ids; }
 
 			Triangulation(const BRep& shape_model)
 					: Representation(shape_model.settings())
 					, _id(shape_model.getId())
 			{
+				long tmp_shape_counter_ids = 0;
+
 				for ( IfcGeom::IfcRepresentationShapeItems::const_iterator iit = shape_model.begin(); iit != shape_model.end(); ++ iit ) {
 
 					int surface_style_id = -1;
@@ -238,6 +242,8 @@ namespace IfcGeom {
 
 								_material_ids.push_back(surface_style_id);
 
+								_shape_counter_ids.push_back(tmp_shape_counter_ids);
+
 								addEdge(dict[n1], dict[n2], edgecount, edges_temp);
 								addEdge(dict[n2], dict[n3], edgecount, edges_temp);
 								addEdge(dict[n3], dict[n1], edgecount, edges_temp);
@@ -324,6 +330,8 @@ namespace IfcGeom {
 							}
 						}
 					}
+
+					tmp_shape_counter_ids++;
 
                     BRepTools::Clean(s);
 				}
