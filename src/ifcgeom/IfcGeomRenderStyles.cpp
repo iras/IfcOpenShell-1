@@ -150,22 +150,88 @@ void InitDefaultMaterials() {
 	default_materials["IfcWindow"          ].Transparency().reset(0.3);
 	
 	default_materials.insert(std::make_pair("IfcDoor", IfcGeom::SurfaceStyle("IfcDoor")));
-	default_materials["IfcDoor"            ].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.55, 0.3, 0.15));
+	default_materials["IfcDoor"            ].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.55, 0.55, 0.55));
+
+	default_materials.insert(std::make_pair("IfcBuildingElementProxy", IfcGeom::SurfaceStyle("IfcBuildingElementProxy")));
+	default_materials["IfcBuildingElementProxy"].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.57 , 0.57, 0.57 ));
+
+	default_materials.insert(std::make_pair("IfcCurtainWall", IfcGeom::SurfaceStyle("IfcCurtainWall")));
+	default_materials["IfcCurtainWall" ].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.78 , 0.78, 0.78 ));
+
+	default_materials.insert(std::make_pair("IfcStair", IfcGeom::SurfaceStyle("IfcStair")));
+	default_materials["IfcStair" ].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.45 , 0.45, 0.45 ));
+
+	default_materials.insert(std::make_pair("IfcRamp", IfcGeom::SurfaceStyle("IfcRamp")));
+	default_materials["IfcRamp" ].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.47 , 0.47, 0.47 ));
+
+	default_materials.insert(std::make_pair("IfcRampFlight", IfcGeom::SurfaceStyle("IfcRampFlight")));
+	default_materials["IfcRampFlight" ].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.48 , 0.48, 0.48 ));
+
+	default_materials.insert(std::make_pair("IfcFlowTreatmentDevice", IfcGeom::SurfaceStyle("IfcFlowTreatmentDevice")));
+	default_materials["IfcFlowTreatmentDevice"].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.63 , 0.63, 0.63 ));
+
+	default_materials.insert(std::make_pair("IfcFlowTerminal", IfcGeom::SurfaceStyle("IfcFlowTerminal")));
+	default_materials["IfcFlowTerminal" ].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.58 , 0.58, 0.58 ));
+
+	default_materials.insert(std::make_pair("IfcFlowFitting", IfcGeom::SurfaceStyle("IfcFlowFitting")));
+	default_materials["IfcFlowFitting" ].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.54 , 0.54, 0.54 ));
+
+	default_materials.insert(std::make_pair("IfcFlowSegment", IfcGeom::SurfaceStyle("IfcFlowSegment")));
+	default_materials["IfcFlowSegment" ].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.52 , 0.52, 0.52 ));
+
+	default_materials.insert(std::make_pair("IfcFlowController", IfcGeom::SurfaceStyle("IfcFlowController")));
+	default_materials["IfcFlowController" ].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.57 , 0.57, 0.57 ));
+
+	default_materials.insert(std::make_pair("IfcFlowMovingDevice", IfcGeom::SurfaceStyle("IfcFlowMovingDevice")));
+	default_materials["IfcFlowMovingDevice"].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.54 , 0.54, 0.54 ));
+
+	default_materials.insert(std::make_pair("IfcDistributionFlowElement", IfcGeom::SurfaceStyle("IfcDistributionFlowElement")));
+	default_materials["IfcDistributionFlowElement"].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.62 , 0.62, 0.62 ));
+
+	default_materials.insert(std::make_pair("IfcColumn", IfcGeom::SurfaceStyle("IfcColumn")));
+	default_materials["IfcColumn" ].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.63 , 0.63, 0.63 ));
+
+	default_materials.insert(std::make_pair("IfcPile", IfcGeom::SurfaceStyle("IfcPile")));
+	default_materials["IfcPile" ].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.64 , 0.64, 0.64 ));
+
+	default_materials.insert(std::make_pair("IfcFooting", IfcGeom::SurfaceStyle("IfcFooting")));
+	default_materials["IfcFooting" ].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.58 , 0.58, 0.58 ));
+
+	default_materials.insert(std::make_pair("IfcCovering", IfcGeom::SurfaceStyle("IfcCovering")));
+	default_materials["IfcCovering" ].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.48 , 0.48, 0.48 ));
+
+	default_materials.insert(std::make_pair("IfcReinforcingBar", IfcGeom::SurfaceStyle("IfcReinforcingBar")));
+	default_materials["IfcReinforcingBar" ].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.68 , 0.68, 0.68 ));
+
+	default_materials.insert(std::make_pair("IfcReinforcingMesh", IfcGeom::SurfaceStyle("IfcReinforcingMesh")));
+	default_materials["IfcReinforcingMesh" ].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.69 , 0.69, 0.69 ));
+
+	default_materials.insert(std::make_pair("IfcFurnishingElement", IfcGeom::SurfaceStyle("IfcFurnishingElement")));
+	default_materials["IfcFurnishingElement"].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.58 , 0.58, 0.58 ));
+
+	default_materials.insert(std::make_pair("IfcDiscreteAccessory", IfcGeom::SurfaceStyle("IfcDiscreteAccessory")));
+	default_materials["IfcDiscreteAccessory"].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.59 , 0.59, 0.59 ));
+
+	default_materials.insert(std::make_pair("IfcTendon", IfcGeom::SurfaceStyle("IfcTendon"))); // IFC4
+	default_materials["IfcTendon"].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.58 , 0.58, 0.58 ));
+
+	default_materials.insert(std::make_pair("IfcTendonAnchor", IfcGeom::SurfaceStyle("IfcTendonAnchor"))); // IFC4
+	default_materials["IfcTendonAnchor"].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.48 , 0.48, 0.48 ));
 	
 	default_materials.insert(std::make_pair("IfcBeam", IfcGeom::SurfaceStyle("IfcBeam")));
 	default_materials["IfcBeam"            ].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.75, 0.7, 0.7 ));
 	
 	default_materials.insert(std::make_pair("IfcRailing", IfcGeom::SurfaceStyle("IfcRailing")));
-	default_materials["IfcRailing"         ].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.65, 0.6, 0.6 ));
+	default_materials["IfcRailing"         ].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.6, 0.6, 0.65 ));
 	
 	default_materials.insert(std::make_pair("IfcMember", IfcGeom::SurfaceStyle("IfcMember")));
 	default_materials["IfcMember"          ].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.65, 0.6, 0.6 ));
 	
 	default_materials.insert(std::make_pair("IfcPlate", IfcGeom::SurfaceStyle("IfcPlate")));
-	default_materials["IfcPlate"           ].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.8 , 0.8, 0.8 ));
+	default_materials["IfcPlate"           ].Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.65, 0.65, 0.65 ));
 
 	default_material = IfcGeom::SurfaceStyle("DefaultMaterial");
-	default_material.Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.7, 0.7, 0.7));
+	default_material.Diffuse().reset(IfcGeom::SurfaceStyle::ColorComponent(0.6, 0.6, 0.6));
 
 	default_materials_initialized = true;
 }
